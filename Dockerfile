@@ -25,6 +25,6 @@ RUN apt -y install docker-ce
 RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
     dpkg-reconfigure --frontend=noninteractive locales && \
     update-locale LANG=en_US.UTF-8
-RUN apt -y install lib32stdc++6 
+RUN apt -y install lib32stdc++6 mock 
 COPY init.sh /
 CMD  bash /init.sh
