@@ -1,6 +1,7 @@
 FROM ubuntu:19.10
 ENV RELEASE_DISTRO ubuntu
 ENV RELEASE_VERSION 19.10
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update
 RUN apt-get install -y \
