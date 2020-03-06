@@ -11,7 +11,6 @@ RUN apt-get install -y \
     cpio \
     diffstat \
     gawk \
-    python-krbv \
     sudo \
     apt-transport-https \
     ca-certificates \    
