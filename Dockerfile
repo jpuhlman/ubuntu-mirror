@@ -16,7 +16,7 @@ RUN apt-get install -y \
     ca-certificates \    
     curl \
     software-properties-common \
-    locales
+    locales \
     wget \
     chrpath \ 
     python3-distutils \ 
