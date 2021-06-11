@@ -23,6 +23,7 @@ RUN apt-get install -y \
     vim \
     screen \
     bzr
+RUN apt upgrade -y
 # Make sure docker works in container
 RUN apt install -y apt-transport-https ca-certificates curl software-properties-common
 RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
