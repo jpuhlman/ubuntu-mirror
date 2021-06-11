@@ -25,7 +25,8 @@ RUN apt-get install -y \
     bzr \
     pbuilder \
     debootstrap \
-    devscripts
+    devscripts \
+    ubuntu-dev-tools
 RUN apt upgrade -y
 # Make sure docker works in container
 RUN apt install -y apt-transport-https ca-certificates curl software-properties-common
