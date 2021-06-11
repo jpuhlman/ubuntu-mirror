@@ -22,7 +22,10 @@ RUN apt-get install -y \
     python3-distutils \ 
     vim \
     screen \
-    bzr
+    bzr \
+    pbuilder \
+    debootstrap \
+    devscripts
 RUN apt upgrade -y
 # Make sure docker works in container
 RUN apt install -y apt-transport-https ca-certificates curl software-properties-common
