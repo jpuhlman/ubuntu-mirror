@@ -26,6 +26,7 @@ RUN apt-get install -y \
     pbuilder \
     debootstrap \
     devscripts \
+    libncursesw5 \
     ubuntu-dev-tools
 RUN apt upgrade -y
 # Make sure docker works in container
