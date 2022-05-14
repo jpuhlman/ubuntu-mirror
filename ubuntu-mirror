@@ -2,7 +2,15 @@
 LOCALHOME=$(echo ~)
 STAMP=$(date +%y%m%d%H%M)
 DISTRO=ubuntu
-VERSION=16.04
+
+if [ -n "$1" ] ; then
+   VERSION=$1
+fi
+
+if [ -z "$VERSION" ] ; then
+    VERSION=14.04
+fi
+#VERSION=16.04
 IMAGE=jpuhlman/$DISTRO-mirror:v$VERSION
 IMAGE=$DISTRO-mirror:v$VERSION
 PULL_IMAGE="1"
@@ -24,13 +32,6 @@ USER_ENVIORNMENT="--hostname $HOSTNAME \
                  -v $LOCALHOME:$LOCALHOME \
                  -v $(pwd):/var/spool/apt-mirror \
                  "
-SCRIPTRUNNER=""
-if [ "$1" ] ; then
-   SCRIPT=$1
-   SCRIPTRUNNER="-v $(readlink -f $SCRIPT):/run.sh\
-                -e SCRIPTRUNNER=/run.sh \
-   "
-fi
 
 DOCKER_ACCESS="-v /var/run/docker.sock:/var/run/docker.sock"
 if [ -e $LOCALHOME/.$DISTRO-builder ] ; then
