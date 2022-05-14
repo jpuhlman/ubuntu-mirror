@@ -8,9 +8,8 @@ if [ -n "$1" ] ; then
 fi
 
 if [ -z "$VERSION" ] ; then
-    VERSION=14.04
+    VERSION=20.04
 fi
-#VERSION=16.04
 IMAGE=jpuhlman/$DISTRO-mirror:v$VERSION
 IMAGE=$DISTRO-mirror:v$VERSION
 PULL_IMAGE="1"
