@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 ENV RELEASE_DISTRO ubuntu
-ENV RELEASE_VERSION 20.04
+ENV RELEASE_VERSION 16.04
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update
@@ -36,6 +36,6 @@ RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
     dpkg-reconfigure --frontend=noninteractive locales && \
     update-locale LANG=en_US.UTF-8
 COPY init.sh /
-RUN sed -i -e "s,artful,trusty,g" /etc/apt/mirror.list
+RUN sed -i -e "s,artful,xenial,g" /etc/apt/mirror.list
 CMD  bash /init.sh
 

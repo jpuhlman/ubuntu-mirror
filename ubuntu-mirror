@@ -2,7 +2,7 @@
 LOCALHOME=$(echo ~)
 STAMP=$(date +%y%m%d%H%M)
 DISTRO=ubuntu
-VERSION=14.04
+VERSION=16.04
 IMAGE=jpuhlman/$DISTRO-mirror:v$VERSION
 IMAGE=$DISTRO-mirror:v$VERSION
 PULL_IMAGE="1"
