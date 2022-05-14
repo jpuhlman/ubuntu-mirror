@@ -6,6 +6,9 @@ VERSION=14.04
 IMAGE=jpuhlman/$DISTRO-mirror:v$VERSION
 IMAGE=$DISTRO-mirror:v$VERSION
 PULL_IMAGE="1"
+if [ -z "$USER" ] ; then
+    USER=mirroradm
+fi
 MOCK_REQUIREMENTS="--privileged \
                   --cap-add=SYS_ADMIN \
                   --security-opt seccomp:unconfined \
@@ -34,9 +37,9 @@ if [ -e $LOCALHOME/.$DISTRO-builder ] ; then
     source $LOCALHOME/.$DISTRO-builder
 fi
 if [ "$PULL_IMAGE" = "1" ] ; then
-    sudo docker pull $IMAGE
+     docker pull $IMAGE
 fi
-sudo docker run -it \
+ docker run -it \
     --name $DISTRO-$VERSION-$STAMP \
     $MOCK_REQUIREMENTS \
     $DOCKER_ACCESS \
@@ -44,4 +47,4 @@ sudo docker run -it \
     $EXTRA_DOCKER_CONFIGS \
     $SCRIPTRUNNER \
     $IMAGE
-sudo docker rm $DISTRO-$VERSION-$STAMP
+ docker rm $DISTRO-$VERSION-$STAMP
