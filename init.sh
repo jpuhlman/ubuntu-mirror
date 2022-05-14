@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -x
 if [ -n "$EXTRA_PACKAGES" ] ; then
    yum install -y $EXTRA_PACKAGES
 fi
